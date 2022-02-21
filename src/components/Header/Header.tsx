@@ -12,7 +12,6 @@ export const Header = () => {
 
 const Container = styled.div`
     text-align: center;
-    margin-top: 2rem;
 `
 
 const Icon = styled(Shuffle)`
@@ -23,7 +22,7 @@ const Icon = styled(Shuffle)`
 const Title = styled.p`
     margin: 0;
     color: #FFFCF9;
-    font-size: 40px;
+    font-size: 33px;
     font-weight: 700;
     font-style: normal;
 `
