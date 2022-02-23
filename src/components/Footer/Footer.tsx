@@ -17,7 +17,7 @@ export const Footer = () => {
 }
 
 const Container = styled.div`
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     justify-content: center;
 `
 

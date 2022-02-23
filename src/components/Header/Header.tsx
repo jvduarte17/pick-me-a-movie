@@ -12,6 +12,7 @@ export const Header = () => {
 
 const Container = styled.div`
     text-align: center;
+    margin-bottom: 1.5rem;
 `
 
 const Icon = styled(Shuffle)`
