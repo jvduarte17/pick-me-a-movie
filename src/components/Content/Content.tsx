@@ -1,15 +1,21 @@
 import styled from 'styled-components';
+import { Movie } from '../../App';
 
-export const Content = () => {
+interface ContentProps {
+    movie: Movie,
+    moviePosterPath: string
+}
+
+export const Content = ({ movie, moviePosterPath }: ContentProps) => {
+
     return (
         <Container>
-            
-            <Image/>
+            <Image src={ moviePosterPath } />
 
             <MovieInfoContainer>
-                <MovieTitle>Título do filme</MovieTitle>
+                <MovieTitle>{ movie.title }</MovieTitle>
                 <MovieDescription>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis voluptates nisi, eaque nemo dolor quis assumenda libero iusto reiciendis quod, tenetur fugiat illo quam minima totam fugit ut. Eius, porro. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam voluptatem dolores incidunt, sint cum officia molestias aut asperiores mollitia unde quam praesentium, quisquam tempora, sit eum libero autem omnis? Exercitationem.
+                    { movie.overview }
                 </MovieDescription>
             </MovieInfoContainer>
 
@@ -31,12 +37,11 @@ const Container = styled.div`
 	    0px 11px 15px -7px hsla(0,0%,0%,0.2);
 `
 
-const Image = styled.div`
+const Image = styled.img`
     width: 10rem;
     height: 12rem;
     margin: 1rem 0 0 1rem;
     border-radius: 5px;
-    background-color: white;
 `
 
 const MovieInfoContainer = styled.div`

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Footer = () => {
     return (
         <Container>
-            <Button>               
+            <Button>
                 <Icon />
                 <ButtonText>Encontrar filme</ButtonText>                
             </Button>
