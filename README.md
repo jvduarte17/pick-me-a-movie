@@ -1,7 +1,18 @@
 # Pick Me a Movie
 
-[App Description]
+## Description
+Pick Me a Movie is an app to help people on choosing random movies to watch. There are no distinctions of release date, genre, or other movie-related features, it's all mixed up :grinning:.
 
-To run this app locally in your PC, execute the following command:
+## Features
+- [x] Movies fetching strategy
+- [ ] Desktop UI
+- [ ] Mobile UI
 
-### `yarn start`
+
+## Install
+    $ git clone https://github.com/jvduarte17/pick-me-a-movie.git
+    $ cd pick-me-a-movie
+    $ yarn
+
+## Start and watch
+    $ yarn start
