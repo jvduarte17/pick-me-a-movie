@@ -67,10 +67,6 @@ function App() {
           <Icon />
           <ButtonText>Encontrar filme</ButtonText>                
         </Button>
-        <FooterText>
-          Clique em "Encontrar filme" que traremos informações <br/>
-          de algum filme para você assistir hoje.
-        </FooterText>
       </Footer>
     </div>
   );
@@ -93,6 +89,12 @@ const Button = styled.div`
   white-space: nowrap;
   margin: 0 auto;
   padding: 0 5px 0 5px;
+  opacity: 0.8;
+  transition: all 300ms ease-out;
+
+  &:hover{
+    opacity: 1;
+  }
 `
 
 const Icon = styled(Shuffle)`
@@ -113,14 +115,4 @@ const ButtonText = styled.p`
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-`
-
-const FooterText = styled.p`
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  color: #FFFCF9;
-  margin-top: 2rem;
 `

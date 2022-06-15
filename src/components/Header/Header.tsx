@@ -26,4 +26,8 @@ const Title = styled.p`
   font-size: 33px;
   font-weight: 700;
   font-style: normal;
+
+  @media(max-width: 410px) {
+    font-size: 20px;
+  }
 `

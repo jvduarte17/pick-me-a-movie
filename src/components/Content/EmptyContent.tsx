@@ -24,6 +24,19 @@ const Container = styled.div`
     0px 24px 38px 3px hsla(0,0%,0%,0.14), 
     0px 9px 46px 8px hsla(0,0%,0%,0.12), 
     0px 11px 15px -7px hsla(0,0%,0%,0.2);
+
+  @media(max-width: 740px) {
+    width: 35rem;
+  }
+
+  @media(max-width: 700px) {
+    width: 25rem;
+    height: 20rem;
+  }
+
+  @media(max-width: 410px) {
+    width: 18rem;
+  }
 `
 
 const Image = styled.div`
@@ -36,6 +49,10 @@ const Image = styled.div`
     0px 24px 38px 3px hsla(0,0%,0%,0.14),
     0px 9px 46px 8px hsla(0,0%,0%,0.12),
     0px 11px 15px -7px hsla(0,0%,0%,0.2);
+
+  @media(max-width: 740px) {
+    display: none;
+  }
 `
 
 const EmptyInfoContainer = styled.div`
