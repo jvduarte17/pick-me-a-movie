@@ -1,4 +1,5 @@
-import { Movie } from '../interfaces/Movie'
+import { Movie } from '../interfaces/Movie';
+import config from '../config';
 
 interface InfoProps {
   page: number,
@@ -7,8 +8,8 @@ interface InfoProps {
   total_results: number
 }
 
-const API_KEY = 'null';
-const API_BASE = 'https://api.themoviedb.org/3';
+const token = config.TMDB_TOKEN;
+const baseUrl = config.TMDB_BASE_URL;
 const moviesArray: Movie[] = [];
 
 export const loadMovies = async (): Promise<void> => {
@@ -26,7 +27,7 @@ export const loadMovies = async (): Promise<void> => {
   }
 
   randomPages.forEach(async (page) => {
-    const fetchedMovies: InfoProps = await fetchItem(`/movie/popular?api_key=${API_KEY}&page=${page}&language=pt-BR`);
+    const fetchedMovies: InfoProps = await fetchItem(`/movie/popular?api_key=${token}&page=${page}&language=pt-BR`);
     
     fetchedMovies.results.forEach((movie) => {
       moviesArray.push(movie)
@@ -44,7 +45,7 @@ export const getMoviesArrayLength = () => {
 }
 
 const fetchItem = async (endpoint: string): Promise<InfoProps> => {
-  const request = await fetch(`${API_BASE}${endpoint}`);
+  const request = await fetch(`${baseUrl}${endpoint}`);
   const json = await request.json();
 
   return json;

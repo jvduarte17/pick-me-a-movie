@@ -14,7 +14,7 @@ export const EmptyContent = () => {
 
 const Container = styled.div`
   width: 40rem;
-  height: 16rem;
+  height: 19rem;
   border-radius: 10px;
   display: flex;
   margin: 0 auto;
@@ -40,7 +40,8 @@ const Container = styled.div`
 `
 
 const Image = styled.div`
-  width: 12rem;
+  width: 13.5rem;
+  height: 18rem;
   margin: .5rem;
   border-radius: 10px;
   
@@ -72,7 +73,7 @@ const EmptyTitle = styled.div`
 
 const EmptyDescription = styled.div`
   margin: 8px;
-  height: 12rem;
+  height: 14.8rem;
   margin-top: 1rem;
   border-radius: 10px;
   background-color: transparent;
