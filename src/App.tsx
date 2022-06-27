@@ -1,7 +1,7 @@
 import { Header } from './components/Header';
 import { Content, EmptyContent } from './components/Content';
 import { useEffect, useState } from 'react';
-import { getMoviesArrayLength, loadMovies } from './client/client'
+import { getMoviesArrayLength, loadMovies, fetchWatchProviders } from './client/client'
 import { Movie } from './interfaces/Movie';
 import { ReactComponent as Shuffle } from './assets/shuffle.svg';
 import styled from 'styled-components';
@@ -40,9 +40,10 @@ function App() {
       alert('Você atingiu o limite máximo de filmes permitidos!');
     } else {
       movieStore.setNewMovie()
-      setTimeout(() => {
+      setTimeout(async () => {
         const lastInserted = movieStore.getMovies()[movieStore.getMoviesShownLength() - 1];
-        
+        const providers = await fetchWatchProviders(lastInserted.movie.id);
+
         setMovie(lastInserted.movie);
         setMoviePosterPath(lastInserted.posterPath);
       }, 1000)
