@@ -16,3 +16,8 @@ interface ProviderInstance {
   provider_id: number,
   provider_name: string
 }
+
+export interface ProviderInfo {
+  name: string,
+  logoPath: string
+}

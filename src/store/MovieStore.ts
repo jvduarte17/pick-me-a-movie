@@ -1,5 +1,6 @@
 import { getMoviesArrayLength, getRandomMovie } from "../client/client";
 import { Movie } from "../interfaces/Movie";
+import config from '../config';
 
 interface MovieProps {
   movie: Movie;
