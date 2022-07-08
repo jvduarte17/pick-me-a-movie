@@ -1,5 +1,5 @@
-import { Header } from './components/Header';
-import { Content, EmptyContent } from './components/Content';
+import { Header } from './components/header';
+import { Content, EmptyContent } from './components/content';
 import { useEffect, useState } from 'react';
 import { getMoviesArrayLength, loadMovies, fetchWatchProviders } from './client/client'
 import { Movie } from './interfaces/Movie';
@@ -7,6 +7,7 @@ import { ProviderInfo } from './interfaces/Provider';
 import { ReactComponent as Shuffle } from './assets/shuffle.svg';
 import styled from 'styled-components';
 import { MovieStore } from './store/MovieStore';
+import { Providers } from './components/providers';
 
 const movieStore = new MovieStore([]);
 
@@ -41,25 +42,13 @@ function App() {
       {
         movie.title === '' ?
         <EmptyContent /> :
-        <Content
-          movie={ movie }
-          moviePosterPath={ moviePosterPath }
-        />
-      }
-
-      {
-        movieProviders.length > 0 &&
-        <ProviderContainer>
-          {movieProviders.map((provider, index) => {
-            return (
-              <ProviderImage
-                key={index}
-                src={`https://image.tmdb.org/t/p/w200/${provider.logoPath}`}
-                title={provider.name}
-              />
-            )
-          })}
-        </ProviderContainer>
+        <>
+          <Content
+            movie={ movie }
+            moviePosterPath={ moviePosterPath }
+          />
+          <Providers movieProviders={movieProviders} />
+        </>
       }
 
       <Footer>
@@ -73,24 +62,6 @@ function App() {
 }
 
 export default App;
-
-const ProviderContainer = styled.div`
-  display: inline-flex;
-  padding: .5rem;
-  background-color: hsla(0, 100%, 100%, 0.16);
-  margin-top: .4rem;
-  border-radius: .5rem;
-`
-
-const ProviderImage = styled.img`
-  width: 2.3rem;
-  height: 2.3rem;
-  border-radius: .5rem;
-  
-  &:not(:first-child) {
-    margin-left: .4rem;
-  }
-`
 
 const Footer = styled.div`
   margin-top: 2.5rem;
