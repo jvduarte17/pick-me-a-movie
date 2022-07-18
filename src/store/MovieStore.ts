@@ -16,7 +16,7 @@ export class MovieStore{
     const maxMoviesReached = this.movies.length === getMoviesArrayLength();
     const imageBaseUrl = config.TMDB_IMAGE_BASE_URL;
     let newMovie: Movie = getRandomMovie();
-    let newMoviePosterPath = `${imageBaseUrl}/${newMovie.poster_path}`;
+    let newMoviePosterPath = `${imageBaseUrl}${newMovie.poster_path}`;
 
     try {
       while (this.movies.some(moviePayload => moviePayload.movie.id === newMovie.id)) {
@@ -24,7 +24,7 @@ export class MovieStore{
           break;
         
         newMovie = getRandomMovie();
-        newMoviePosterPath = `${imageBaseUrl}/${newMovie.poster_path}`;
+        newMoviePosterPath = `${imageBaseUrl}${newMovie.poster_path}`;
       }
     } catch(e) {
       console.log(e)

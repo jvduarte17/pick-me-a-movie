@@ -12,14 +12,14 @@ export const Providers = ({ movieProviders }: ProvidersProps) => {
   return (
     movieProviders.length === 0 ?
     <NoProviderContainer>
-      <p>Sem streaming disponível no Brasil</p>
+      <p>Stream indisponível no Brasil</p>
     </NoProviderContainer> :
     <ProviderContainer>
       {movieProviders.map((provider, index) => {
         return (
           <ProviderImage
             key={index}
-            src={`${imageBaseUrl}/${provider.logoPath}`}
+            src={`${imageBaseUrl}${provider.logoPath}`}
             title={provider.name}
           />
         )
@@ -30,7 +30,7 @@ export const Providers = ({ movieProviders }: ProvidersProps) => {
 
 const NoProviderContainer = styled.div`
   height: 3.3rem;
-  width: 18rem;
+  width: 16rem;
   background-color: hsla(0, 100%, 100%, 0.16);
   border-radius: .5rem;
   margin-top: .4rem;
