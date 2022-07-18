@@ -1,4 +1,5 @@
 import { Movie } from '../interfaces/Movie';
+import { Provider, ProviderInfo } from '../interfaces/Provider';
 import config from '../config';
 
 interface InfoProps {
@@ -49,4 +50,17 @@ const fetchItem = async (endpoint: string): Promise<InfoProps> => {
   const json = await request.json();
 
   return json;
+}
+
+export const fetchWatchProviders = async (movieId: number): Promise<ProviderInfo[]> => {
+  const request = await fetch(`${baseUrl}/movie/${movieId}/watch/providers?api_key=${token}`);
+  const json: Provider = await request.json();
+  const providers: ProviderInfo[] = [];
+
+  json.results.BR?.flatrate?.forEach(flatrate => providers.push({
+    name: flatrate.provider_name,
+    logoPath: flatrate.logo_path
+  }));
+  
+  return providers;
 }

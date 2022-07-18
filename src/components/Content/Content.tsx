@@ -48,7 +48,6 @@ export const Content = ({
 
   return (
     <Container>
-
       <MovieImageContainer
         onMouseEnter={() => setImageVisibility(false)}
         onMouseLeave={() => setImageVisibility(true)}
@@ -151,6 +150,7 @@ const MovieTitle = styled.p`
   font-size: 17px;
   color: #FFFCF9;
   margin: 8px;
+  text-align: left;
 `
 
 const MovieDescription = styled.p`
